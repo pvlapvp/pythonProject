@@ -24,6 +24,9 @@ class NumList:
     def __str__(self):
         return f"{self.data}"
 
+    def __repr__(self):
+        return self.__str__()
+
     def remove(self, value):
         if self.data.count(value) > 0:
             self.data.remove(value)
