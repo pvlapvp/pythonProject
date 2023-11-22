@@ -2,10 +2,10 @@ import math
 
 
 class Dot:
-    def __init__(self, x, y):
+    def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
-        self.color = ''
+        self.color = None
 
     def __str__(self):
         return f"x = {self.x}, y = {self.y}, color = {self.color}"
@@ -14,7 +14,7 @@ class Dot:
         self.color = color
 
 class Circle(Dot):
-    def __init__(self, x=0, y=0, r=1):
+    def __init__(self, x, y, r=1):
         super().__init__(x, y)
         self.r = r
 
@@ -32,11 +32,11 @@ class Sphere(Circle):
         super().__init__(x, y, r)
 
     def volume(self):
-        return super().area()
+        return (4 * math.pi * (self.r ** 3))/3
 
     def area(self):
         pass
-    
+
 c = Circle(1, 2, 3)
 print(c.area())
 s = Sphere(1, 1, 3)
